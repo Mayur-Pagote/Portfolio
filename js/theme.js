@@ -829,7 +829,11 @@ document.addEventListener('DOMContentLoaded', function () {
             if (activeTab) {
                 tabButtons.forEach(function (b) {
                     var tabAttr = b.getAttribute('data-tab');
-                    b.classList.toggle('active', tabAttr === activeTab);
+                    var isActive = tabAttr === activeTab;
+                    b.classList.toggle('active', isActive);
+                    if (isActive) {
+                        b.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                    }
                 });
             }
         }, { passive: true });
@@ -914,7 +918,11 @@ document.addEventListener('DOMContentLoaded', function () {
             if (activeTab) {
                 tabButtons.forEach(function (b) {
                     var tabAttr = b.getAttribute('data-tab');
-                    b.classList.toggle('active', tabAttr === activeTab);
+                    var isActive = tabAttr === activeTab;
+                    b.classList.toggle('active', isActive);
+                    if (isActive) {
+                        b.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                    }
                 });
             }
         }, { passive: true });
@@ -1747,6 +1755,56 @@ document.addEventListener('DOMContentLoaded', function () {
                 var img = new Image();
                 img.src = 'https://gitpulse-sable.vercel.app/api/leetcode/svg/mayurpagote/card/' + type + '?theme=' + theme + '&year=' + new Date().getFullYear();
             });
+        });
+
+        // Preload folder certificates and badges in the background after page load
+        var staticAssets = [
+            // Certificates
+            'assets/certificates/stanford-code-in-place.png',
+            'assets/certificates/docker-and-kubernetes-masterclass.png',
+            'assets/certificates/3d-printing-and-additive-manufacturing.png',
+            'assets/certificates/professional-skills-for-the-workplace.png',
+            'assets/certificates/getting-started-with-google-workspace.png',
+            'assets/certificates/introduction-to-computing-systems.png',
+            'assets/certificates/getting-started-with-git-and-github.png',
+            'assets/certificates/introduction-to-artificial-intelligence-ai.png',
+            'assets/certificates/introduction-to-containers-docker-kubernetes-openshift.png',
+            'assets/certificates/innovation-through-design-think-make-break-repeat.png',
+            'assets/certificates/ai-fundamentals.png',
+            'assets/certificates/introduction-to-sql.png',
+            'assets/certificates/introduction-to-data.png',
+            'assets/certificates/python-basic.png',
+            'assets/certificates/problem-solving-basic.png',
+            'assets/certificates/sql-basic.png',
+            'assets/certificates/sql-intermediate.png',
+            // Badges
+            'assets/badges/github/pull-shark.png',
+            'assets/badges/github/yolo.png',
+            'assets/badges/github/quickdraw.png',
+            'assets/badges/github/starstruck.png',
+            'assets/badges/github/pair-extraordinaire.png',
+            'assets/badges/github/galaxy-brain.png',
+            'assets/badges/github/public-sponsor.png',
+            'assets/badges/hackerrank/problem-solving.svg',
+            'assets/badges/hackerrank/python.svg',
+            'assets/badges/hackerrank/cpp.svg',
+            'assets/badges/hackerrank/c-language.svg',
+            'assets/badges/hackerrank/java.svg',
+            'assets/badges/hackerrank/sql.svg',
+            'assets/badges/hackerrank/30-days-of-code.svg',
+            'assets/badges/hackerrank/ruby.svg',
+            'assets/badges/leetcode/lg365.png',
+            'assets/badges/leetcode/lg200.png',
+            'assets/badges/leetcode/100-days.png',
+            'assets/badges/leetcode/50-days.png',
+            'assets/badges/leetcode/introduction-to-pandas.png',
+            'assets/badges/leetcode/lg25100.png',
+            'assets/badges/leetcode/lg2550.png'
+        ];
+
+        staticAssets.forEach(function(src) {
+            var img = new Image();
+            img.src = src;
         });
     });
 

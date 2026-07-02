@@ -4,27 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mayur's Personal Portfolio">
-    <title>Mayur | Portfolio</title>
+    <title>Mayur Pagote | Portfolio</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mayurpagote.dev/">
     <meta property="og:title" content="Mayur | Portfolio">
     <meta property="og:description" content="Mayur's Personal Developer Portfolio showcasing projects, certifications, and skills.">
-    <meta property="og:image" content="assets/profile/upscaled.png">
+    <meta property="og:image" content="https://mayurpagote.dev/preview-card.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="722">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mayurpagote.dev/">
     <meta name="twitter:title" content="Mayur | Portfolio">
     <meta name="twitter:description" content="Mayur's Personal Developer Portfolio showcasing projects, certifications, and skills.">
-    <meta name="twitter:image" content="assets/profile/upscaled.png">
+    <meta name="twitter:image" content="https://mayurpagote.dev/preview-card.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Parisienne&display=block" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://mayurpagote.dev/#website",
+          "url": "https://mayurpagote.dev/",
+          "name": "Mayur | Portfolio",
+          "description": "Mayur's Personal Developer Portfolio showcasing projects, certifications, and skills.",
+          "publisher": {
+            "@id": "https://mayurpagote.dev/#person"
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://mayurpagote.dev/#person",
+          "name": "Mayur Pagote",
+          "url": "https://mayurpagote.dev/",
+          "image": "https://mayurpagote.dev/assets/profile/upscaled.png",
+          "description": "Computer Science & Engineering student and Open Source Contributor.",
+          "sameAs": [
+            "https://www.linkedin.com/in/mayurpagote/",
+            "https://github.com/Mayur-Pagote",
+            "https://leetcode.com/u/mayurpagote/",
+            "https://www.codechef.com/users/mayur_pagote",
+            "https://medium.com/@mayurpagote",
+            "https://www.hackerrank.com/profile/mayurpagote",
+            "https://www.instructables.com/member/mayurpagote/",
+            "https://www.youtube.com/@IU-Studies"
+          ],
+          "jobTitle": "Software Developer / Student",
+          "knowsAbout": [
+            "Python",
+            "C++",
+            "Data Structures and Algorithms",
+            "Docker",
+            "Azure",
+            "ESP32",
+            "ATmega328P",
+            "Microcontrollers",
+            "Open Source Contribution"
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body id="top" data-theme="dark">
 
@@ -33,7 +89,7 @@
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#certifications"><span class="nav-text-desktop">Certifications</span><span class="nav-text-mobile">Certs</span></a></li>
             <li><a href="#extra">Extras</a></li>
         </ul>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light and dark mode">
